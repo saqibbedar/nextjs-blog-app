@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Blog App (Under Development 🚧)
 
-## Getting Started
+Welcome to the Blog App! This is a full stack blog application built using Next.js. The app is currently **under development**, and I am actively working on new features and improvements every day.
 
-First, run the development server:
+## ⚠️ Development Notice
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Please note that this project is a **work in progress**, and things may change frequently as I continue to add new functionality and enhancements. Once the development is complete, I will provide **detailed documentation** for setting up, using, and contributing to the project.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Feel free to check out the repository and explore the code, but keep in mind that some features might not be fully functional or stable yet.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## 🛠️ Installation (Development Setup) 
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To run the app locally in its current state, follow the instructions below:
 
-## Learn More
+1. Clone the repository:
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   git clone https://github.com/saqibbedar/blog-app.git
+   cd blog-app
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+2. Install dependencies for both the frontend and backend:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    ```bash
+    npm Install
+    ```
 
-## Deploy on Vercel
+3. Start the development server::
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    npm run dev
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+# Contributing 🤝
+
+Contributions are welcome! However, since the project is still under active development, I recommend reaching out first if you plan to work on any significant features or bug fixes.
+
+# Stay Updated ⬆️
+
+Make sure to star the repository to get notifications on updates and progress. You can visit the repository and follow along with the development at:
+
+[GitHub Repository](https://github.com/saqibbedar/Reactfolio)
