@@ -1,25 +1,35 @@
 "use client";
-import { assets, blog_data } from "@/Assets/assets";
+import { assets } from "@/Assets/assets";
 import Footer from "@/Components/Footer";
+import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 
 const page = ({ params }) => {
-  const [data, setData] = useState(null);
-  const fetchBlogData = () => {
-    for (let i = 0; i < blog_data.length; i++) {
-      if (Number(params.id) === blog_data[i].id) {
-        setData(blog_data[i]);
-        break;
+  const [blog, setBlog] = useState(null);
+  const fetchBlogData = async () => {
+    try {
+      const response = await axios.get(`/api/blog`, {
+        params: {
+          id: params.id,
+        },
+      });
+      if (response.data.success) {
+        setBlog(response.data.blog);
+      } else {
+        throw new Error("Error while opening blog.");
       }
+    } catch (error) {
+      console.error(error);
     }
   };
   useEffect(() => {
     fetchBlogData();
+    console.log("Hello", blog);
   }, []);
   return (
-    data && (
+    blog && (
       <>
         <div className="bg-gray-200 py-5 px-5 md:px-12 lg:px-28">
           <div className="flex justify-between items-center">
@@ -38,88 +48,34 @@ const page = ({ params }) => {
           </div>
           <div className="text-center my-24">
             <h1 className="text-2xl sm:text-5xl font-semibold max-w-[700px] mx-auto">
-              {data.title}
+              {blog.title}
             </h1>
             <Image
               className="mx-auto mt-6 border border-white rounded-full"
-              src={data.author_img}
+              src={blog.authorImg}
               width={60}
               height={60}
               alt="author-image"
             />
             <p className="mt-1 pb-2 text-lg max-w-[740px] mx-auto">
-              {data.author}
+              {blog.author}
             </p>
           </div>
         </div>
         <div className="mx-5 max-w-[800px] md:mx-auto mt-[-100px] mb-10">
           <Image
             className="border-4 border-white"
-            src={data.image}
+            src={blog.image}
             width={1280}
             height={720}
             alt="blog-cover-image"
           />
-          <h1 className="my-8 text-[26px] font-semibold">Introduction</h1>
-          <p>{data.description}</p>
-          <h3 className="my-5 text-[18px] font-semibold">
-            Step 1: Writing my first blog is it okey?
-          </h3>
-          <p className="my-3">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Perspiciatis ex placeat officiis autem. Non nisi alias veritatis
-            deserunt, reiciendis dolorem corrupti. Perspiciatis pariatur eveniet
-            provident consequatur! Cupiditate enim eaque dolore! Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit. Vel earum labore
-            ducimus officia corrupti fuga non quia repellat qui vero commodi
-            reiciendis, praesentium recusandae doloremque debitis aut obcaecati
-            vitae voluptas.
-          </p>
-          <p className="my-3">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Perspiciatis ex placeat officiis autem. Non nisi alias veritatis
-            deserunt, reiciendis dolorem corrupti. Perspiciatis pariatur eveniet
-            provident consequatur! Cupiditate enim eaque dolore! Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit. Vel earum labore
-            ducimus officia corrupti fuga non quia repellat qui vero commodi
-            reiciendis, praesentium recusandae doloremque debitis aut obcaecati
-            vitae voluptas.
-          </p>
 
-          <h3 className="my-5 text-[18px] font-semibold">
-            Step 2: Writing my first blog is it okey?
-          </h3>
-          <p className="my-3">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Perspiciatis ex placeat officiis autem. Non nisi alias veritatis
-            deserunt, reiciendis dolorem corrupti. Perspiciatis pariatur eveniet
-            provident consequatur! Cupiditate enim eaque dolore! Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit. Vel earum labore
-            ducimus officia corrupti fuga non quia repellat qui vero commodi
-            reiciendis, praesentium recusandae doloremque debitis aut obcaecati
-            vitae voluptas.
-          </p>
-          <p className="my-3">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Perspiciatis ex placeat officiis autem. Non nisi alias veritatis
-            deserunt, reiciendis dolorem corrupti. Perspiciatis pariatur eveniet
-            provident consequatur! Cupiditate enim eaque dolore! Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit. Vel earum labore
-            ducimus officia corrupti fuga non quia repellat qui vero commodi
-            reiciendis, praesentium recusandae doloremque debitis aut obcaecati
-            vitae voluptas.
-          </p>
-          <h3 className="my-5 text-[18px] font-semibold">Conclusion:</h3>
-          <p className="my-3">
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            Perspiciatis ex placeat officiis autem. Non nisi alias veritatis
-            deserunt, reiciendis dolorem corrupti. Perspiciatis pariatur eveniet
-            provident consequatur! Cupiditate enim eaque dolore! Lorem ipsum
-            dolor sit amet, consectetur adipisicing elit. Vel earum labore
-            ducimus officia corrupti fuga non quia repellat qui vero commodi
-            reiciendis, praesentium recusandae doloremque debitis aut obcaecati
-            vitae voluptas.
-          </p>
+          <div
+            className="blog-content"
+            dangerouslySetInnerHTML={{ __html: blog.description }}
+          ></div>
+
           <div className="my-24">
             <p className="text-black font font-semibold my-4">
               Share this article on social media

@@ -1,16 +1,18 @@
-# Blog App (Under Development 🚧)
+# NextJS Blog App
 
-Welcome to the Blog App! This is a full stack blog application built using Next.js. The app is currently **under development**, and I am actively working on new features and improvements every day.
+Welcome to the NextJS Blog App! This is a full stack blog application built using Next.js and styled with Tailwind CSS. The app is fully functional and allows users to write articles, delete them, and supports email subscriptions. It also features blogs categorized by different topics and more.
 
-## ⚠️ Development Notice
+## ⚠️ Project Features
 
-Please note that this project is a **work in progress**, and things may change frequently as I continue to add new functionality and enhancements. Once the development is complete, I will provide **detailed documentation** for setting up, using, and contributing to the project.
+- **Write Articles**: Users can create and publish their own blog posts.
+- **Delete Articles**: Users have the ability to delete their blog posts.
+- **Email Subscription**: Users can subscribe to receive updates.
+- **Category Support**: Blogs can be categorized into different topics for easier navigation.
+- **Responsive Design**: The application is styled with Tailwind CSS for a modern and responsive user interface.
 
-Feel free to check out the repository and explore the code, but keep in mind that some features might not be fully functional or stable yet.
+## 🛠️ Installation (Development Setup)
 
-## 🛠️ Installation (Development Setup) 
-
-To run the app locally in its current state, follow the instructions below:
+To run the app locally, follow the instructions below:
 
 1. Clone the repository:
 
@@ -21,22 +23,23 @@ To run the app locally in its current state, follow the instructions below:
 
 2. Install dependencies for both the frontend and backend:
 
-    ```bash
-    npm Install
-    ```
+   ```bash
+   npm install
+   ```
 
-3. Start the development server::
+3. Start the development server:
 
-    ```bash
-    npm run dev
-    ```
+   ```bash
+   npm run dev
+   ```
 
-# Contributing 🤝
+## Contributing 🤝
 
-Contributions are welcome! However, since the project is still under active development, I recommend reaching out first if you plan to work on any significant features or bug fixes.
+Contributions are welcome! If you plan to work on any significant features or bug fixes, please reach out first.
 
-# Stay Updated ⬆️
+# Support Me ❤️
 
-Make sure to star the repository to get notifications on updates and progress. You can visit the repository and follow along with the development at:
+This project is completely free under the [`MIT LICENSE`](./LICENSE). If you’ve found this project helpful and would like to support its development, you can consider buying me a coffee. Your support is greatly appreciated!
 
-[GitHub Repository](https://github.com/saqibbedar/Reactfolio)
+<div align="center">
+<a href="https://www.buymeacoffee.com/saqibbedar"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=saqibbedar&button_colour=5F7FFF&font_colour=ffffff&font_family=Poppins&outline_colour=000000&coffee_colour=FFDD00"></a></div>
